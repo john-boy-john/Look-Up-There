@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Look Up There</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+<div class="scrollingText">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni qui asperiores recusandae, eligendi similique cum officiis reiciendis illo? Eos, voluptatibus numquam. Natus, culpa tempore!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus accusamus neque sint. Doloribus, vitae recusandae quisquam at quae ipsam nam quidem voluptas eos error.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea libero hic quae corporis cumque optio exercitationem, aliquid, quo temporibus veritatis suscipit natus. Ut repellat quaerat sapiente est corporis nihil quod vitae officia! Doloremque, quisquam tenetur. Rem!</p>
+</div>
+
+<div class="slideshow">
+      <img src="//farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
+      <img src="//farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
+ </div>
+
+  <script> //slideshow
+
+$(function(){
+    $('.slideshow img:gt(0)').hide();
+    setInterval(function(){
+      $('.slideshow :first-child').fadeOut(0)
+         .next('img').fadeIn(0)
+         .end().appendTo('.slideshow');}, 
+      5000);
+});
+
+ </script>
+</body>
+</html>
