@@ -1,7 +1,18 @@
+@font-face {
+  font-family: 'Heldane Text';
+  src:  url('/font/heldane-text-web-regular.woff2') format('woff2'),
+        url('/font/heldane-text-web-regular.woff') format('woff');
+}
+
 * {
-    font-size: 24px;
     padding: 0;
     margin: 0;
+}
+
+html {
+  font-family: 'Heldane Text', sans-serif;
+  font-size: min(max(22px, 2vw), 48px);
+  color: #45423d;
 }
 
 .container {
@@ -10,7 +21,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: blue;
+    background-color: #fffaf5;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,20 +30,12 @@
 }
 
 .scrollingText {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0 10% 0 10%;
-   color: white;
-   top:0;
-  animation-name: slide;
-  animation-duration: 40s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: slide;
-  -webkit-animation-duration: 40s;
-  -webkit-animation-timing-function:linear;
-  -webkit-animation-iteration-count: infinite;
-}
+  box-sizing: border-box;
+  width: 50%;
+  padding: 0 10% 0 10%;
+  top: 0;
+  animation: slide 40s linear infinite;
+  -webkit-animation: slide 40s linear infinite;;
 }
 
 @keyframes slide {
@@ -48,18 +51,21 @@
 
 .slideshow {
     box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 100%;
-    padding: 10px
+    object-fit: scale-down;
 }
 
 .slideshow img{ 
-    position: absolute;
+    position: relative;
     margin: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media (max-width: 1000px) {
@@ -69,7 +75,6 @@
         position: relative;
         top: 0;
         left: 0;
-        background-color: blue;
         display: block;
         flex-direction: row;
         justify-content: center;
